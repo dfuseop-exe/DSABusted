@@ -64,7 +64,9 @@ void mergeSort(int arr[] , int s , int e){
 
 int main(){
     int arr[] = {3,7,0,1,5,8,3,2,34,66,87,23,12,12,12};
-    mergeSort(arr,0,14);
+    int n = 15 ;
+            //start nd end pass
+    mergeSort(arr,0,n-1);
 
     for(int i=0;i<15;i++){
         cout << arr[i] << " ";
