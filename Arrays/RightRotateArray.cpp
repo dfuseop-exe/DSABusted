@@ -8,13 +8,12 @@ int main(){
     int times = 2;
     int temp[5]={0};
 
-    
-
     for(int i=0; i< n; i++){
         temp[(i+times) % n] = arr[i];   
     }
 
     for(int i=0; i<n; i++){
-        cout<<temp[i]<<endl;
+        cout<<temp[i]<<" ";
     }
+    
 }
