@@ -25,7 +25,6 @@ int main(){
         for(int i = startCol ; count < total && i <= endCol ; i++){
             ans.push_back(arr[startRow][i]);
             count++;
-            
         }
         startRow++;
 
