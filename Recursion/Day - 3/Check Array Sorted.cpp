@@ -8,7 +8,7 @@ bool check(int arr[] , int i ){
     }
 
     if(arr[i] > arr[i+1])
-        return false; ;
+        return false; 
     i++;
     
     int ans = check(arr , i);
