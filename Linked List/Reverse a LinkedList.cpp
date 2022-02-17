@@ -33,7 +33,7 @@ Node* reverseLinkedList(Node *head)
     reverse(head,Curr,Prev);
     return head;
     
-     Node* Forward = NULL ;
+    Node* Forward = NULL ;
     Node* Prev = NULL ;
     Node* Curr = head ;
     
@@ -44,6 +44,5 @@ Node* reverseLinkedList(Node *head)
         Curr = Forward ;
     }
     return Prev ; */
-    
     
 }
