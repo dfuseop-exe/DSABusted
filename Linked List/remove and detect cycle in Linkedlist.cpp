@@ -1,4 +1,4 @@
-//detection and also return intersection point using floyd detection algo
+//detection and also return intersection point using floyd cycle detection algo
 Node* FCD(Node* head){
     if(head == NULL){
         return NULL ;
