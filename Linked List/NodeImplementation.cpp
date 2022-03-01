@@ -13,12 +13,7 @@ class Node {
 
     ~Node(){
         
-        int value = this-> data ;
-        cout<<"Callback "<<value<<endl;
-        if(this-> next != NULL){
-            delete next ;
-            this-> next = NULL ;
-        }
+        
     }
 };
 
@@ -123,7 +118,7 @@ int main(){
     print(head);
     cout<<"head "<<head->data<<endl;
     cout<<"tail "<<tail->data<<endl;
-    deleteNode(tail ,head , 8);
+    deleteNode(tail ,head , 3);
     print(head);
     cout<<"head "<<head->data<<endl;
     cout<<"tail "<<tail->data<<endl;
