@@ -14,7 +14,7 @@ class Solution
                 maxi.pop_back();
             
 
-            
+            //store index
             maxi.push_back(i);
 
             
