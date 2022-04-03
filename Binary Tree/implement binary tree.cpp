@@ -43,15 +43,15 @@ node* buildTree(node* root){
 void levelOrderTraversal(node* root) {
     queue<node*> q;
     q.push(root);
-    q.push(NULL);
+//q.push(NULL);
 
     while(!q.empty()) {
         node* temp = q.front();
         q.pop();
 
         if(temp == NULL) { 
-            //purana level complete traverse ho chuka hai
-            cout << endl;
+            // previous level completly traverse 
+            // cout << endl;
             if(!q.empty()) { 
                 //queue still has some child ndoes
                 q.push(NULL);
