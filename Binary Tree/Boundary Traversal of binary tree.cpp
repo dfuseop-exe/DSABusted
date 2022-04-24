@@ -26,7 +26,6 @@ private:
         }
 
         //LNR inorder traversal
-
         traverseLeaf(root-> left , ans) ;
         
         //check for leaf

@@ -38,6 +38,7 @@ class Solution {
 private:
     
     pair<int,int> diameterFast(TreeNode* root){
+        
         if(root == NULL){
             pair<int,int> p = make_pair(0,0) ;
             return p ;
@@ -55,10 +56,11 @@ private:
         ans.second = max(left.second , right.second) + 1 ;
         
         return ans ;
+
     }
 public:
     int diameterOfBinaryTree(TreeNode* root) {
         return diameterFast(root).first ;
-
     }
 };
+

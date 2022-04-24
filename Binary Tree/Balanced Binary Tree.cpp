@@ -1,27 +1,29 @@
 class Solution {
 private:
     pair<bool,int> isBalancedFast(TreeNode* root) {
-        //base case
         if(root == NULL){
-                        //      isBalanced , height of null is 0
-            pair<bool,int> p = make_pair(true,0) ;
-            return p ;
+            pair<bool,int> ans = make_pair(true,0) ;
+            return ans ;
         }
         
-        pair<bool,int> left = isBalancedFast(root-> left) ;
-        pair<bool,int> right = isBalancedFast(root-> right) ;
+        //go to last to hit base case it will give some values
+        pair<bool,int> leftAns = isBalancedFast(root-> left) ;
+        pair<bool,int> rightAns = isBalancedFast(root-> right) ;
         
+        //get base case reply is Balanced 
+        bool isLeft = leftAns.first ;
+        bool isright = rightAns.first ;
         
-        bool leftAns = left.first ;
-        bool rightAns = right.first ;
-        
-        bool diff = abs(left.second - right.second) <= 1 ;
-        
+        //we check for current node is Balanced //or Handler
+        bool isDiff = abs(leftAns.second - rightAns.second) <= 1 ;
+
+        //ans pair
         pair<bool,int> ans ;
-        //for storing the height of current node
-        ans.second = max(left.second , right.second) + 1 ;
         
-        if(leftAns && rightAns && diff){
+        //store height which will required for handler
+        ans.second = max(leftAns.second , rightAns.second) + 1 ;
+        
+        if(isLeft && isright && isDiff){
             ans.first = true ;
             return ans ;
         }else{

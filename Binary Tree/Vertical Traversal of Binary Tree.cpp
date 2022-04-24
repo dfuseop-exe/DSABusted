@@ -1,57 +1,53 @@
+
 class Solution
 {
-    public:
+public:
     //Function to find the vertical order traversal of Binary Tree.
     vector<int> verticalOrder(Node *root)
     {
-           
-        map<int, map<int,vector<int> > > nodes;
-        queue< pair<Node*, pair<int,int> > > q;
-        vector<int> ans;
+        //HD -> lvl -> Nodes
+        map<int,map<int,vector<int> > > nodes ;
+        queue<pair<Node* , pair<int,int> > > q ;
         
-        if(root == NULL)
-            return ans;
-
-        //base entry    
-        q.push(make_pair(root, make_pair(0,0)));
+        //ans return 
+        vector<int> ans ;
         
-        while(!q.empty()) {
-            pair<Node*, pair<int,int> > temp = q.front();
-            q.pop();
-            Node* frontNode = temp.first;
-            int hd = temp.second.first;
-            int lvl = temp.second.second;
+        if(root == NULL){
+            return ans ;
+        }
+        
+        //push pair
+        q.push(make_pair(root,make_pair(0,0))) ;
+        
+        while(!q.empty()){
+            pair<Node* , pair<int,int> > temp = q.front() ;
+            q.pop() ;
             
-            nodes[hd][lvl].push_back(frontNode->data);
+            //front node
+            Node* frontNode = temp.first ;
             
-            for(auto i: nodes) {
+            int hd = temp.second.first ;
+            int lvl = temp.second.second ;
             
-            for(auto j:i.second) {
-                
-                for(auto k:j.second)
-                {
-                    ans.push_back(k);
+            nodes[hd][lvl].push_back(frontNode-> data) ;
+            
+            
+            if(frontNode-> left){
+                q.push(make_pair(frontNode-> left,make_pair(hd-1,lvl+1))) ;
+            }
+            
+            if(frontNode-> right){
+                q.push(make_pair(frontNode-> right,make_pair(hd+1,lvl+1))) ;
+            }
+        }
+        
+        for(auto i : nodes){
+            for(auto j : i.second){
+                for(auto k : j.second){
+                    ans.push_back(k) ;
                 }
             }
         }
-
-            if(frontNode->left)
-                q.push(make_pair(frontNode->left, make_pair(hd-1, lvl+1) ));
-                
-            if(frontNode->right)
-                q.push(make_pair(frontNode->right, make_pair(hd+1, lvl+1)));
-        }
         
-        for(auto i: nodes) {
-            
-            for(auto j:i.second) {
-                
-                for(auto k:j.second)
-                {
-                    ans.push_back(k);
-                }
-            }
-        }
-        return ans;
-    }
+        return ans ;
 };

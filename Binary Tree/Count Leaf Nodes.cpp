@@ -1,5 +1,5 @@
 void inorder(BinaryTreeNode<int> *root , int &sum){
-
+        
         //base condition
         if(root == NULL){
             return ;

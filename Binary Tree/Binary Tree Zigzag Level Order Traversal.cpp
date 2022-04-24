@@ -45,7 +45,7 @@ public:
             //change flow of traverse
             leftToright = !leftToright ;
             
-
+            // insert to main result vector 
             result.push_back(currLevel) ;
         }
         return result ;
