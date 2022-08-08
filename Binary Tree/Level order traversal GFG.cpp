@@ -6,7 +6,7 @@ class Solution
     vector<int> levelOrder(Node* node)
     {
         //storing element of level
-            vector<int> level; 
+        vector<int> level; 
           
         //if condition is true return empty ans
         if(node == NULL) return level; 

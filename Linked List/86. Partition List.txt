@@ -1,0 +1,32 @@
+class Solution {
+public:
+    ListNode* partition(ListNode* head, int x) {
+        vector<int> lessOrder ;        
+        vector<int> maxOrder ;
+
+        ListNode* temp = head ;
+        while(temp != NULL){
+            int ele = temp-> val ;
+            if(ele < x){
+                lessOrder.push_back(ele) ;
+            }else{
+                maxOrder.push_back(ele) ;
+            }
+            temp = temp-> next ;
+        }
+        
+        for(int i = 0 ; i < maxOrder.size() ; i++){
+            lessOrder.push_back(maxOrder[i]) ;
+        }
+        
+        temp = head ;
+        int i = 0 ;
+        while(temp != NULL){
+            temp-> val = lessOrder[i] ;
+            i++ ;
+            temp = temp-> next ;
+        }
+        
+        return head ;
+    }
+};

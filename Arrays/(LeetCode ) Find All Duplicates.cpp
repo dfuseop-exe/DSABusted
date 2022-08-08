@@ -13,6 +13,7 @@ int main(){
             cout<<ans[1]<<" ";
         }
     }
+
         
     for (int i = 0; i < j; i++)
     {

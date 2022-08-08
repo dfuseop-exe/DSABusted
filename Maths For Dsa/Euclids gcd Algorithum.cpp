@@ -23,8 +23,8 @@ int check(int a , int  b){
 }
 
 int main(){
-    int a = 462 ;
-    int b = 1071  ;
+    int a = 2 ;
+    int b = 2  ;
 
     cout<<check(a,b);
 }

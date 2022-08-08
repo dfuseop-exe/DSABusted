@@ -11,7 +11,8 @@ Node* reverse(Node* head){
     return chotahead ;
 }
 
-/*void reverse(Node* &head , Node* Curr, Node* Prev){
+/*
+void reverse(Node* &head , Node* Curr, Node* Prev){
     ///base case
     if(Curr == NULL){
         head = Prev ;
@@ -23,9 +24,9 @@ Node* reverse(Node* head){
     Curr-> next = Prev ;
 }
 */
+
 Node* reverseLinkedList(Node *head)
 {
-    
     return reverse(head);
     /*Node* Prev = NULL ;
     Node* Curr = head ;

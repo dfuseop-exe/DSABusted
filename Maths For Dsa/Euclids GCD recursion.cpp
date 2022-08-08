@@ -20,7 +20,7 @@ int check(int a , int b){
 }
 
 int main(){
-    int a = 24 , b = 48 ;
+    int a = 2 , b = 2 ;
     int ans = check(a,b);
     cout<<ans<<endl;
 }
